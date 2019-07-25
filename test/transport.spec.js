@@ -145,7 +145,7 @@ describe('transport', function() {
       transport.clientSecret = 'abc';
 
       var basicAuth = 'Basic ' +
-                      new Buffer(transport.clientId + ':' +
+                      new Buffer.from(transport.clientId + ':' +
                       transport.clientSecret).toString('base64');
 
       transport._setOptions(options, req);
