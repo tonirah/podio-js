@@ -370,7 +370,7 @@ describe('auth', function() {
 
       auth._onAccessTokenAcquired.call(host, responseData, function() {});
 
-      expect(host.authObject).toEqual(oAuthObject);
+      expect(_.isMatch(host.authObject, oAuthObject)).toBe(true);
     });
 
     it('should save an authObject in the session store and provide a callback', function() {
@@ -384,7 +384,7 @@ describe('auth', function() {
       auth._onAccessTokenAcquired.call(host, responseData, function() {});
 
       expect(host.sessionStore.set.calledOnce).toBe(true);
-      expect(host.sessionStore.set.getCall(0).args[0]).toEqual(oAuthObject);
+      expect(_.isMatch(host.sessionStore.set.getCall(0).args[0],oAuthObject)).toBe(true);
       expect(host.sessionStore.set.getCall(0).args[1]).toEqual('client');
       expect(_.isFunction(host.sessionStore.set.getCall(0).args[2])).toBe(true);
     });
