@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/podio/podio-js",
   "devDependencies": {
-    "coveralls": "2.11.6",
+    "coveralls": "^3.0.5",
     "istanbul": "0.4.2",
     "jasmine": "^3.4.0",
     "sinon": "1.17.3"
